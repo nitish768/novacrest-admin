@@ -1,0 +1,740 @@
+/* =========================
+   GLOBAL RESET / BASE
+   Why:
+   - poori site ka base look define hota hai
+   - default browser spacing hat jaati hai
+   Impact:
+   - clean and consistent UI
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f4f9f3;
+  color: #173b1a;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+}
+
+/* =========================
+   APP WRAPPER
+   Why:
+   - overall app structure control
+========================= */
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(208, 240, 194, 0.45), transparent 22%),
+    linear-gradient(180deg, #f7fbf4 0%, #eef7ea 100%);
+  padding-bottom: 4rem;
+}
+
+/* =========================
+   TOP STRIP
+   Why:
+   - fresh supply / live business feel
+   Impact:
+   - visitor ko instantly pata chalta hai business active hai
+========================= */
+
+.top-strip {
+  background: #1f5c2c;
+  color: #f8fff6;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   HERO SECTION
+   Why:
+   - first impression
+   - buyer ko 5 sec me samajh aana chahiye business kya karta hai
+   Impact:
+   - better clarity + better conversion
+========================= */
+
+.hero {
+  padding: 4.5rem 1.25rem 5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 20px 50px rgba(23, 59, 26, 0.08);
+}
+
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 14px 30px rgba(27, 94, 32, 0.16);
+  transition: transform 0.35s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin: 1.25rem 0 0.7rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: #e4f3df;
+  color: #23672b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.15;
+  color: #173b1a;
+}
+
+.tagline {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.subtitle {
+  max-width: 760px;
+  margin: 0.7rem auto 0;
+  font-size: 1.05rem;
+  color: #406244;
+}
+
+/* =========================
+   BUTTONS
+   Why:
+   - CTA buttons should look clickable and clear
+   Impact:
+   - user action easy hota hai
+========================= */
+
+.hero-buttons,
+.modal-actions,
+.contact-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.45rem;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #2e7d32, #1f5c2c);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(31, 92, 44, 0.22);
+}
+
+.btn.outline {
+  background: #ffffff;
+  color: #1f5c2c;
+  border: 2px solid #2e7d32;
+}
+
+.btn.tertiary {
+  background: #eaf6e5;
+  color: #1f5c2c;
+  border: 1px solid #cfe8c7;
+}
+
+.btn.small {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.92rem;
+}
+
+.btn.download-btn {
+  background: #1b5e20;
+  color: #ffffff;
+}
+
+.btn.close-btn {
+  background: #ffffff;
+  color: #1b5e20;
+  border: 2px solid #1b5e20;
+}
+
+/* =========================
+   COMMON SECTION WRAPPER
+   Why:
+   - sab sections me same spacing and width
+========================= */
+
+.section {
+  width: min(1150px, calc(100% - 2rem));
+  margin: 0 auto 2rem;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #173b1a;
+}
+
+.section-heading p {
+  margin: 0.55rem auto 0;
+  max-width: 680px;
+  color: #557158;
+  font-size: 1rem;
+}
+
+/* =========================
+   WHY CHOOSE US
+   Why:
+   - trust & value proposition
+========================= */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.35rem;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  box-shadow: 0 14px 32px rgba(23, 59, 26, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(23, 59, 26, 0.1);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.1rem;
+  color: #1f5c2c;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #4f6b53;
+  font-size: 0.97rem;
+}
+
+/* =========================
+   PRODUCT CARDS
+   Why:
+   - product info visible hona chahiye
+   Impact:
+   - user directly product samajh paata hai
+========================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.product-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fcf4 100%);
+  border-radius: 24px;
+  padding: 1.45rem;
+  border: 1px solid rgba(46, 125, 50, 0.14);
+  box-shadow: 0 18px 40px rgba(23, 59, 26, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 44px rgba(23, 59, 26, 0.12);
+}
+
+.product-card h3 {
+  margin: 1.35rem 0 0.5rem;
+  color: #173b1a;
+  font-size: 1.35rem;
+}
+
+.product-card p {
+  margin: 0 0 0.9rem;
+  color: #506c53;
+}
+
+.product-card ul {
+  padding-left: 1.15rem;
+  margin: 0 0 1.2rem;
+  color: #355438;
+}
+
+.product-card li {
+  margin-bottom: 0.45rem;
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-block;
+  background: #1f5c2c;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+}
+
+.upcoming-badge {
+  background: #9a6b1a;
+}
+
+.product-card.upcoming {
+  background: linear-gradient(180deg, #fffdf6 0%, #faf3dd 100%);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  border-radius: 24px;
+  padding: 1.6rem;
+  box-shadow: 0 12px 28px rgba(23, 59, 26, 0.05);
+}
+
+.about p {
+  margin: 0;
+  color: #49644c;
+  font-size: 1rem;
+}
+
+/* =========================
+   COLLAPSIBLE / DETAILS SECTION
+   Why:
+   - detailed info secondary area me
+========================= */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collapsible {
+  background: #ffffff;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(23, 59, 26, 0.05);
+}
+
+.collapsible-header {
+  width: 100%;
+  background: #f2faef;
+  color: #173b1a;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.collapsible-content {
+  background: #ffffff;
+}
+
+.collapsible-inner {
+  padding: 1.2rem;
+}
+
+.arrow {
+  font-size: 1.1rem;
+}
+
+/* =========================
+   GENERIC GRID / CARD
+========================= */
+
+.grid.large {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.white-box,
+.owner-card,
+.contact-card {
+  background: #ffffff;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 26px rgba(23, 59, 26, 0.05);
+}
+
+.card h4,
+.contact-card h3 {
+  margin-top: 0;
+  color: #1f5c2c;
+}
+
+.card p,
+.contact-card p,
+.owner-card p {
+  color: #516a54;
+}
+
+.large-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #426044;
+}
+
+.large-list li {
+  margin-bottom: 0.55rem;
+}
+
+/* =========================
+   CONTACT
+   Why:
+   - clear contact and enquiry area
+========================= */
+
+.contact-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(235,247,231,0.9));
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 28px;
+  padding: 1.8rem;
+  box-shadow: 0 16px 34px rgba(23, 59, 26, 0.06);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: min(1150px, calc(100% - 2rem));
+  margin: 2rem auto 0;
+  text-align: center;
+  padding: 2rem 1rem 0;
+  color: #466248;
+  border-top: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.footer h3 {
+  margin: 0 0 0.35rem;
+  color: #173b1a;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+/* =========================
+   MODAL
+   Why:
+   - visiting card popup show karna
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 12, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.modal-content {
+  width: min(780px, 96%);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+.visiting-card {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal-actions {
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+   Why:
+   - mobile and tablet pe layout tootna nahi chahiye
+   Impact:
+   - Railway deploy ke baad phone users ko better UI milega
+========================= */
+
+@media (max-width: 992px) {
+  .feature-grid,
+  .product-grid,
+  .grid.large,
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-content {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1rem 3.5rem;
+  }
+
+  .hero-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-buttons,
+  .modal-actions,
+  .contact-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .feature-grid,
+  .product-grid,
+  .grid.large,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    width: min(100% - 1rem, 1150px);
+  }
+
+  .top-strip {
+    font-size: 0.86rem;
+    padding: 0.75rem;
+  }
+
+  .contact-section,
+  .about,
+  .collapsible-inner,
+  .product-card,
+  .feature-card {
+    padding: 1rem;
+  }
+}
+.order-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(232,245,233,0.9));
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 28px;
+  padding: 1.8rem;
+  box-shadow: 0 16px 34px rgba(23, 59, 26, 0.06);
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #1f5c2c;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #cfe0cf;
+  background: #ffffff;
+  font-size: 0.98rem;
+  color: #173b1a;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.delivery-preview {
+  background: #ffffff;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 24px rgba(23, 59, 26, 0.05);
+}
+
+.delivery-preview h3 {
+  margin-top: 0;
+  color: #1f5c2c;
+}
+
+.delivery-preview p {
+  margin: 0.45rem 0;
+  color: #4d684f;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FEATURED PRODUCT */
+
+.featured-product-card{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+padding:40px;
+background:white;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.featured-image{
+width:100%;
+border-radius:15px;
+}
+
+.featured-details h2{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.highlight-list{
+margin:15px 0;
+}
+
+.highlight-list li{
+margin-bottom:8px;
+}
+
+.featured-action-row{
+margin-top:20px;
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.featured-select-box select{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.price-tag{
+font-size:22px;
+color:#2e7d32;
+}
